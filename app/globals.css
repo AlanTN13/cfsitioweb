@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #020617;
+  --primary: #0A3D2F;
+  /* Deep forest green */
+  --primary-light: #0F5A45;
+  --accent: #10B981;
+  /* Sophisticated Emerald */
+  --accent-deep: #059669;
+  --accent-soft: rgba(16, 185, 129, 0.1);
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --card: #F8FAFC;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-premium: 0 20px 25px -5px rgba(10, 61, 47, 0.1), 0 8px 10px -6px rgba(10, 61, 47, 0.1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-premium);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(10, 61, 47, 0.05), transparent 40%);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.trust-bar {
+  background: linear-gradient(90deg, transparent, rgba(10, 61, 47, 0.03), transparent);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mesh-gradient {
+  background-color: var(--primary);
+  background-image:
+    radial-gradient(at 0% 0%, hsla(164, 72%, 15%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(164, 72%, 22%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(164, 72%, 18%, 1) 0, transparent 50%);
+}
+
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}

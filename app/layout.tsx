@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CF Consultores | Comercio Internacional",
-  description: "Consultoría estratégica en comercio internacional. Importá y exportá con seguridad y eficiencia. Acompañamos a empresas y emprendedores.",
+  description: "Asesoramiento en importaciones y exportaciones. Te ayudamos a evaluar costos, ordenar documentación y coordinar tu operación de comercio exterior.",
   keywords: ["comercio exterior", "importación", "exportación", "consultoría", "aduana", "logística"],
 };
 

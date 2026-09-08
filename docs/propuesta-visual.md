@@ -5,7 +5,7 @@ Una consultora que explica, ordena y acompaña. La identidad parte del logo exis
 
 ## Decisiones visibles
 - Logo completo, más grande y sin repetir otra marca a su lado.
-- Títulos en Georgia, relacionados con las letras del logo; texto en Inter. Tamaños contenidos y jerarquías claras.
+- Títulos en Inter, sin remates y con peso seminegrita; texto también en Inter. Tamaños contenidos y jerarquías claras. La marca conserva su logo original.
 - Secciones más compactas, con alineaciones y divisiones simples. Servicios como lista, proceso como secuencia; sin tarjetas decorativas, cápsulas, degradados ni subrayados de adorno.
 - Foto portuaria para mostrar la relación entre transporte, mercadería y documentación. Foto aérea de contenedores junto al enfoque de planificación. Ambas son fotografías de archivo con licencia, no operaciones propias de CF.
 - Textos que explican tareas y próximos pasos. Se retiraron afirmaciones sin respaldo sobre experiencia internacional, garantías, resultados y tiempos de respuesta.

@@ -27,9 +27,9 @@ button:not(:disabled), a { cursor: pointer; }
 button, input, textarea { font: inherit; }
 button:disabled { cursor: not-allowed; opacity: .7; }
 h1, h2, h3, p, figure, dl, dd { margin: 0; }
-h1, h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; color: var(--primary); letter-spacing: -.025em; }
-h1 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.13; }
-h2 { font-size: clamp(1.875rem, 2.65vw, 2.25rem); line-height: 1.2; }
+h1, h2 { font-family: inherit; font-weight: 600; color: var(--primary); letter-spacing: -.025em; }
+h1 { font-size: clamp(2rem, 3.3vw, 2.875rem); line-height: 1.18; }
+h2 { font-size: clamp(1.75rem, 2.5vw, 2.125rem); line-height: 1.25; }
 h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: var(--primary); }
 p { color: var(--muted); }
 .site-width { width: min(100% - 4rem, 1160px); margin-inline: auto; }

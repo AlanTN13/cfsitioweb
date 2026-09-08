@@ -5,7 +5,7 @@ Una consultora que explica, ordena y acompaña. La identidad parte del logo exis
 
 ## Decisiones visibles
 - Logo completo, más grande y sin repetir otra marca a su lado.
-- Títulos en Inter, sin remates y con peso seminegrita; texto también en Inter. Tamaños contenidos y jerarquías claras. La marca conserva su logo original.
+- Variante de revisión: títulos en Nunito Sans, con formas más redondeadas y peso medio; texto en Inter. Inspirada en la ligereza de la referencia, sin afirmar que sea su fuente exacta. Mantiene tamaños contenidos, el verde y el logo original.
 - Secciones compactas y alineadas, con espacio entre grupos en lugar de líneas en servicios, enfoque y proceso. Fotos con esquinas suavemente redondeadas, botones y campos con radios discretos. Se conservan divisiones tenues donde ayudan a distinguir las preguntas. Sin tarjetas decorativas, cápsulas, degradados ni subrayados de adorno.
 - Foto portuaria para mostrar la relación entre transporte, mercadería y documentación. Foto aérea de contenedores junto al enfoque de planificación. Ambas son fotografías de archivo con licencia, no operaciones propias de CF.
 - Textos que explican tareas y próximos pasos. Se retiraron afirmaciones sin respaldo sobre experiencia internacional, garantías, resultados y tiempos de respuesta.

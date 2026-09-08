@@ -52,11 +52,14 @@ export default function Home() {
             <div className="lg:col-span-5 relative fade-in-delayed">
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-premium aspect-[4/5] border-8 border-white/50">
                 <Image
-                  src="/hero-consultoria.png"
-                  alt="Operativa de comercio exterior"
+                  src="/images/puerto-comercio-exterior.jpg"
+                  alt="Buque portacontenedores y grúas en una terminal de comercio internacional"
                   fill
+                  sizes="(min-width: 1280px) 480px, (min-width: 1024px) 40vw, (min-width: 640px) 85vw, 100vw"
+                  priority
                   className="object-cover"
                 />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-primary/35 via-primary/5 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
@@ -150,6 +153,16 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] shadow-premium border border-primary/10">
+              <Image
+                src="/images/logistica-contenedores.jpg"
+                alt="Contenedores de carga apilados en una terminal logística"
+                fill
+                sizes="(min-width: 1280px) 576px, (min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div aria-hidden="true" className="absolute inset-0 bg-primary/10 pointer-events-none" />
+            </div>
           </div>
 
           <div className="bg-primary p-8 md:p-12 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden">
@@ -224,6 +237,14 @@ export default function Home() {
           </div>
           <div className="space-y-2 border-t border-slate-200">
             <FAQAccordionItem
+              question="¿Cómo es la primera consulta?"
+              answer="Es una reunión de diagnóstico de 30 minutos donde escuchamos tu proyecto, validamos ideas iniciales y te comentamos cómo podemos aportar valor específico a tu caso."
+            />
+            <FAQAccordionItem
+              question="¿Qué información necesito para cotizar?"
+              answer="Lo ideal es tener: tipo de producto (o posición arancelaria si la tenés), valor estimado, origen y destino. Si no lo tenés, te ayudamos a definirlo."
+            />
+            <FAQAccordionItem
               question="¿Trabajan con empresas y emprendedores?"
               answer="Sí, adaptamos nuestra metodología tanto para grandes empresas que buscan optimizar sus procesos como para emprendedores que están dando sus primeros pasos en comercio exterior."
             />
@@ -234,14 +255,6 @@ export default function Home() {
             <FAQAccordionItem
               question="¿En qué países operan?"
               answer="Tenemos red de agentes y experiencia operando en los 5 continentes, con especial énfasis en operaciones con China, Estados Unidos, Europa y países del Mercosur."
-            />
-            <FAQAccordionItem
-              question="¿Cómo es la primera consulta?"
-              answer="Es una reunión de diagnóstico de 30 minutos donde escuchamos tu proyecto, validamos ideas iniciales y te comentamos cómo podemos aportar valor específico a tu caso."
-            />
-            <FAQAccordionItem
-              question="¿Qué información necesito para cotizar?"
-              answer="Lo ideal es tener: tipo de producto (o posición arancelaria si la tenés), valor estimado, origen y destino. Si no lo tenés, te ayudamos a definirlo."
             />
           </div>
         </div>

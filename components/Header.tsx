@@ -29,25 +29,26 @@ const Header = () => {
             }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative">
-                        <div className="absolute -inset-1 bg-accent/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <Link href="/" aria-label="CF Consultores — Inicio" className="header-brand flex shrink-0 items-center gap-2 sm:gap-4 group">
+                    <div className="header-brand-logo" aria-hidden="true">
                         <Image
                             src="/logo.png"
-                            alt="CF Consultores"
-                            width={42}
-                            height={42}
-                            className="relative rounded-xl shadow-sm"
+                            alt=""
+                            width={1080}
+                            height={1350}
+                            sizes="(min-width: 640px) 198px, 105px"
+                            className="header-brand-image"
+                            priority
                         />
                     </div>
-                    <div className="flex flex-col">
-                        <span className="font-bold text-primary text-xl leading-none">CF</span>
-                        <span className="text-[10px] font-bold text-accent uppercase tracking-[0.2em] leading-none mt-1">Consultores</span>
+                    <div className="flex flex-col border-l border-primary/20 pl-2 sm:pl-4">
+                        <span className="header-brand-initials text-primary">CF</span>
+                        <span className="header-brand-name text-primary">Consultores</span>
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-10">
+                <nav className="hidden lg:flex items-center gap-5 xl:gap-10">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
@@ -68,10 +69,10 @@ const Header = () => {
                 </nav>
 
                 {/* Mobile Nav Button */}
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <Link
                         href="https://wa.me/549XXXXXXXXXX"
-                        className="bg-accent text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-premium"
+                        className="bg-accent text-white px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-premium"
                     >
                         WhatsApp
                     </Link>

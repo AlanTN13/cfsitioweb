@@ -2,15 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FAQAccordionItem from '@/components/FAQAccordionItem';
 import ContactForm from '@/components/ContactForm';
+import HeroBackdrop from '@/components/HeroBackdrop';
+import { Ship, PlaneTakeoff, ChartNoAxesCombined, FileSearch, SearchCheck, Truck } from 'lucide-react';
 
 const services = [
-  ['Importaciones', 'Revisamos los pasos de tu compra en el exterior y te acompañamos en la coordinación logística, aduanera y documental.'],
-  ['Exportaciones', 'Te ayudamos a planificar la salida de tus productos: requisitos, documentación y alternativas de transporte.'],
+  ['Quiero importar', 'Revisamos los pasos de tu compra en el exterior y te acompañamos en la coordinación logística, aduanera y documental.'],
+  ['Quiero exportar', 'Te ayudamos a planificar la salida de tus productos: requisitos, documentación y alternativas de transporte.'],
   ['Costos y viabilidad', 'Ordenamos los costos de la operación y sus supuestos para que puedas evaluar las alternativas antes de avanzar.'],
   ['Clasificación arancelaria', 'Analizamos las características de la mercadería para identificar su clasificación y los requisitos aplicables.'],
   ['Evaluación de proveedores', 'Te acompañamos en la búsqueda y revisión de proveedores, condiciones de compra y documentación disponible.'],
   ['Logística y documentación', 'Revisamos documentos y coordinamos las etapas de transporte para anticipar faltantes y evitar demoras.'],
 ];
+
+const serviceIcons = [Ship, PlaneTakeoff, ChartNoAxesCombined, FileSearch, SearchCheck, Truck];
 
 const steps = [
   ['Escuchamos tu consulta', 'Nos contás qué querés importar o exportar y en qué etapa estás.'],
@@ -23,6 +27,7 @@ export default function Home() {
   return (
     <main id="contenido">
       <section className="hero">
+        <HeroBackdrop />
         <div className="site-width hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">CF Consultores · Comercio exterior</p>
@@ -46,23 +51,26 @@ export default function Home() {
       <section id="servicios" className="section services">
         <div className="site-width">
           <div className="section-heading">
-            <h2>En qué podemos ayudarte</h2>
-            <p>Podés consultarnos por una operación completa o por una necesidad puntual.</p>
+            <h2>¿Qué necesitás resolver?</h2>
+            <p>Contanos qué querés importar o exportar. Podemos acompañarte con toda la operación o ayudarte con una etapa puntual.</p>
           </div>
           <div className="service-grid">
-            {services.map(([title, description], index) => (
-              <article className="service-item" key={title}>
-                <span className="service-number" aria-hidden="true">0{index + 1}</span>
-                <div><h3>{title}</h3><p>{description}</p></div>
-              </article>
-            ))}
+            {services.map(([title, description], index) => {
+              const Icon = serviceIcons[index];
+              return (
+                <article className="service-item" key={title}>
+                  <span className="service-icon" aria-hidden="true"><Icon size={27} strokeWidth={1.5} /></span>
+                  <div><h3>{title}</h3><p>{description}</p></div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section id="enfoque" className="section approach">
         <div className="site-width approach-grid">
-          <figure>
+          <figure className="approach-figure">
             <div className="photo approach-photo">
               <Image src="/images/logistica-contenedores.jpg" alt="Vista aérea de contenedores y vías de circulación en una terminal logística" fill sizes="(min-width: 1200px) 480px, (min-width: 800px) 42vw, 100vw" className="object-cover" />
             </div>

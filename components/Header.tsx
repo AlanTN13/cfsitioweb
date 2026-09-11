@@ -6,7 +6,7 @@ export default function Header() {
         <header className="site-header">
             <div className="site-width header-inner">
                 <Link href="/" aria-label="CF Consultores — Inicio" className="brand-logo">
-                    <Image src="/cf-consultores-logo.png" alt="CF Consultores en Comercio Internacional" width={2000} height={2000} sizes="(min-width: 800px) 224px, 183px" priority />
+                    <Image src="/cf-consultores-logo.png" alt="CF Consultores en Comercio Internacional" width={2000} height={2000} sizes="(min-width: 800px) 163px, 143px" priority />
                 </Link>
                 <nav aria-label="Navegación principal" className="header-nav">
                     <Link href="#servicios">Servicios</Link>

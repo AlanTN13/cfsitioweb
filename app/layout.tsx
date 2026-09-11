@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const heading = Nunito_Sans({ subsets: ["latin"], weight: "500", variable: "--font-heading", display: "swap" });
 
 export const metadata: Metadata = {
   title: "CF Consultores | Comercio Internacional",
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-background text-foreground`}>
+      <body className={`${inter.className} ${heading.variable} antialiased bg-background text-foreground`}>
         <Header />
         {children}
         <Footer />

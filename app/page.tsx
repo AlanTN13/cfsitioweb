@@ -3,6 +3,8 @@ import Link from 'next/link';
 import FAQAccordionItem from '@/components/FAQAccordionItem';
 import ContactForm from '@/components/ContactForm';
 import HeroBackdrop from '@/components/HeroBackdrop';
+import PageMotion from '@/components/PageMotion';
+import OperationJourney from '@/components/OperationJourney';
 import { Ship, PlaneTakeoff, ChartNoAxesCombined, FileSearch, SearchCheck, Truck } from 'lucide-react';
 
 const services = [
@@ -16,7 +18,7 @@ const services = [
 
 const serviceIcons = [Ship, PlaneTakeoff, ChartNoAxesCombined, FileSearch, SearchCheck, Truck];
 
-const steps = [
+const steps: [string, string][] = [
   ['Escuchamos tu consulta', 'Nos contás qué querés importar o exportar y en qué etapa estás.'],
   ['Revisamos la operación', 'Identificamos información pendiente, requisitos, costos y alternativas.'],
   ['Acordamos cómo avanzar', 'Definimos el alcance del trabajo, las responsabilidades y los próximos pasos.'],
@@ -26,6 +28,7 @@ const steps = [
 export default function Home() {
   return (
     <main id="contenido">
+      <PageMotion />
       <section className="hero">
         <HeroBackdrop />
         <div className="site-width hero-grid">
@@ -92,11 +95,7 @@ export default function Home() {
       <section id="proceso" className="section process">
         <div className="site-width">
           <div className="section-heading"><h2>Cómo trabajamos</h2><p>Un recorrido claro, desde la consulta hasta las gestiones acordadas.</p></div>
-          <ol className="process-grid">
-            {steps.map(([title, description], index) => (
-              <li key={title}><span className="step-number">0{index + 1}</span><h3>{title}</h3><p>{description}</p></li>
-            ))}
-          </ol>
+          <OperationJourney steps={steps} />
         </div>
       </section>
 

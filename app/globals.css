@@ -21,7 +21,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-size: 1rem; line-height: 1.65; }
 a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
-a, button { transition: color .15s, background-color .15s; }
+a, button { transition: color .2s ease, background-color .2s ease, text-decoration-color .2s ease; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 button:not(:disabled), a { cursor: pointer; }
 button, input, textarea { font: inherit; }
@@ -168,15 +168,11 @@ figcaption { font-size: .8125rem; line-height: 1.5; color: var(--muted); margin-
   *, *::before, *::after { transition: none !important; }
 }
 
-/* Decorative motion stays behind content and can be paused. */
+/* Preserve the decorative shapes without continuous animation. */
 .hero-atmosphere { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
 .atmosphere-shape { position: absolute; display: block; }
-.atmosphere-shape-one { width: 720px; height: 650px; top: -210px; right: -80px; background: radial-gradient(ellipse at 40% 55%, #bfe5cd 0%, #dcefe2 55%, #eaf5ed 80%); border-radius: 42% 58% 64% 36% / 47% 42% 58% 53%; animation: atmosphere-drift 22s ease-in-out infinite alternate; }
-.atmosphere-shape-two { width: 530px; height: 270px; bottom: -150px; left: -150px; background: #dfefe5; border-radius: 48% 52% 35% 65% / 55% 63% 37% 45%; animation: atmosphere-drift 28s ease-in-out infinite alternate-reverse; }
-.hero-atmosphere[data-paused="true"] .atmosphere-shape { animation-play-state: paused; }
-@keyframes atmosphere-drift { from { transform: translate3d(0, 0, 0) rotate(-4deg); } to { transform: translate3d(-32px, 22px, 0) rotate(5deg); } }
-.motion-toggle { position: absolute; right: 16px; bottom: 10px; z-index: 2; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; color: var(--primary); background: #ffffffcc; border: 1px solid #c9ddcf; border-radius: 50%; }
-.motion-toggle:hover { background: white; }
+.atmosphere-shape-one { width: 720px; height: 650px; top: -210px; right: -80px; background: radial-gradient(ellipse at 40% 55%, #bfe5cd 0%, #dcefe2 55%, #eaf5ed 80%); border-radius: 42% 58% 64% 36% / 47% 42% 58% 53%; }
+.atmosphere-shape-two { width: 530px; height: 270px; bottom: -150px; left: -150px; background: #dfefe5; border-radius: 48% 52% 35% 65% / 55% 63% 37% 45%; }
 .hero-figure, .approach-figure { position: relative; isolation: isolate; }
 .hero-figure { padding: 14px 0 0 14px; }
 .hero-figure::before { content: ''; position: absolute; z-index: -1; inset: 0 20px 34px 0; background: #a9d6bf; border-radius: 68px 26px 72px 24px; transform: rotate(-3deg); }
@@ -192,7 +188,10 @@ figcaption { font-size: .8125rem; line-height: 1.5; color: var(--muted); margin-
   .approach-photo { border-radius: 16px 44px 16px 32px; }
   .service-icon { width: 46px; height: 46px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .atmosphere-shape { animation: none; }
-  .motion-toggle { display: none; }
+@media (min-width: 800px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-photo[data-parallax="true"] img { transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.12); }
+}
+@media (hover: hover) {
+  .header-nav a:hover, .footer-inner nav a:hover, .text-link:hover { color: #34765c; }
+  .faq-item button:hover { color: #34765c; }
 }

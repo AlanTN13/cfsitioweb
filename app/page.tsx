@@ -3,6 +3,7 @@ import Link from 'next/link';
 import FAQAccordionItem from '@/components/FAQAccordionItem';
 import ContactForm from '@/components/ContactForm';
 import HeroBackdrop from '@/components/HeroBackdrop';
+import PageMotion from '@/components/PageMotion';
 import { Ship, PlaneTakeoff, ChartNoAxesCombined, FileSearch, SearchCheck, Truck } from 'lucide-react';
 
 const services = [
@@ -26,6 +27,7 @@ const steps = [
 export default function Home() {
   return (
     <main id="contenido">
+      <PageMotion />
       <section className="hero">
         <HeroBackdrop />
         <div className="site-width hero-grid">

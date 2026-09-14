@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowDownLeft, ArrowUpRight, ArrowRight, Package, MessageCircle, FileSearch, Handshake, Truck } from 'lucide-react';
+import { ArrowDownLeft, ArrowUpRight, ArrowRight, Check, MousePointer2, Package, MessageCircle, FileSearch, Handshake, Truck } from 'lucide-react';
 
 type Step = readonly [string, string];
 type Direction = 'importar' | 'exportar';
@@ -36,13 +36,24 @@ export default function OperationJourney({ steps }: { steps: readonly Step[] }) 
                     <button type="button" aria-pressed={direction === 'importar'} onClick={() => setDirection('importar')}><ArrowDownLeft size={18} aria-hidden="true" />Quiero importar</button>
                     <button type="button" aria-pressed={direction === 'exportar'} onClick={() => setDirection('exportar')}><ArrowUpRight size={18} aria-hidden="true" />Quiero exportar</button>
                 </div>
-                <p>Elegí una etapa para conocerla.</p>
             </div>
 
-            <ol className="journey-steps" aria-label="Etapas del acompañamiento">
+            <p className="journey-prompt" id="journey-instructions"><MousePointer2 size={18} aria-hidden="true" />Elegí una etapa para ver cómo te acompañamos.</p>
+            <ol className="journey-steps" aria-label="Etapas del acompañamiento" aria-describedby="journey-instructions">
                 {steps.map(([title], index) => {
                     const Icon = icons[index];
-                    return <li key={title}><button type="button" aria-pressed={active === index} aria-controls="journey-detail" onClick={() => setActive(index)}><Icon size={22} strokeWidth={1.5} aria-hidden="true" /><span><small>0{index + 1}</small>{title}</span></button></li>;
+                    return (
+                        <li key={title}>
+                            <button type="button" aria-pressed={active === index} aria-controls="journey-detail" onClick={() => setActive(index)}>
+                                <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
+                                <span className="journey-step-copy"><small>Etapa 0{index + 1}</small><span className="journey-step-title">{title}</span></span>
+                                <span className="journey-step-action" aria-hidden="true">
+                                    {active === index ? 'Etapa seleccionada' : 'Explorar etapa'}
+                                    {active === index ? <Check size={17} /> : <ArrowRight size={17} />}
+                                </span>
+                            </button>
+                        </li>
+                    );
                 })}
             </ol>
 

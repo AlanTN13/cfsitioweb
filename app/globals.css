@@ -21,7 +21,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-size: 1rem; line-height: 1.65; }
 a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
-a, button { transition: color .2s ease, background-color .2s ease, text-decoration-color .2s ease; }
+a, button { transition: color .2s ease, background-color .2s ease, text-decoration-color .2s ease, transform .2s ease; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 button:not(:disabled), a { cursor: pointer; }
 button, input, textarea { font: inherit; }
@@ -189,9 +189,14 @@ figcaption { font-size: .8125rem; line-height: 1.5; color: var(--muted); margin-
   .service-icon { width: 46px; height: 46px; }
 }
 @media (min-width: 800px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .hero-photo[data-parallax="true"] img { transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.12); }
+  .hero-photo[data-parallax="true"] img { transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.22); }
 }
 @media (hover: hover) {
+  .button-primary:hover:not(:disabled) { transform: translateY(-2px); }
   .header-nav a:hover, .footer-inner nav a:hover, .text-link:hover { color: #34765c; }
   .faq-item button:hover { color: #34765c; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-primary:hover:not(:disabled) { transform: none; }
 }

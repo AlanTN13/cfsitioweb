@@ -10,7 +10,7 @@ export default function PageMotion() {
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         const desktop = window.matchMedia('(min-width: 800px) and (pointer: fine)');
         const photo = root.querySelector<HTMLElement>('.hero-photo');
-        const sections = Array.from(root.querySelectorAll<HTMLElement>('.section > .site-width'));
+        const sections = Array.from(root.querySelectorAll<HTMLElement>('.hero-figure, .section > .site-width'));
         const seen = new Set<HTMLElement>();
         const animations = new Set<Animation>();
         let stopEffects = () => {};
@@ -28,16 +28,16 @@ export default function PageMotion() {
                     if (seen.has(section)) continue;
                     seen.add(section);
                     const animation = section.animate([
-                        { opacity: 0, transform: 'translateY(8px)' },
+                        { opacity: 0, transform: 'translateY(14px)' },
                         { opacity: 1, transform: 'translateY(0)' },
-                    ], { duration: 380, easing: 'cubic-bezier(0.2, 0.6, 0.3, 1)' });
+                    ], { duration: 550, easing: 'cubic-bezier(0.2, 0.6, 0.3, 1)' });
                     animations.add(animation);
                     animation.onfinish = () => animations.delete(animation);
                 }
-            }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+            }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
             for (const section of sections) {
-                if (section.getBoundingClientRect().top < window.innerHeight) seen.add(section);
+                if (section.getBoundingClientRect().bottom <= 0) seen.add(section);
                 if (!seen.has(section)) observer.observe(section);
             }
 
@@ -48,8 +48,8 @@ export default function PageMotion() {
                 if (!photo) return;
                 const top = photo.getBoundingClientRect().top;
                 if (top > window.innerHeight || top + photo.offsetHeight < 0) return;
-                // At most 18px of travel, inside a slightly enlarged, clipped image.
-                const offset = Math.min(18, Math.max(0, window.scrollY * 0.06));
+                // At most 36px of travel, inside a slightly enlarged, clipped image.
+                const offset = Math.min(36, Math.max(0, window.scrollY * 0.12));
                 photo.style.setProperty('--parallax-y', `${offset}px`);
             };
             const schedulePhoto = () => {

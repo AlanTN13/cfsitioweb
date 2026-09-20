@@ -9,12 +9,11 @@ Antes de trabajo sustantivo, leer por una vía autorizada la versión vigente de
 URL canónica: https://github.com/AlanTN13/Alanos/blob/main/Alan/01_Architecture/Execution_Runtime_Contract.md
 
 Contexto relevante:
-- `Alan/00_Control/ROADMAP.md`;
-- `Alan/00_Control/Estado_Portafolio.md`;
+- `Alan/05_Apoyos_Puntuales/CF_Consultores/CF_Consultores_Contexto.md`;
 
 Un enlace no se carga solo. Si el contrato o el contexto necesario no están accesibles, declarar `BLOCKED_EXTERNAL` y no iniciar cambios. No reconstruir reglas de memoria ni ampliar exploración por reflejo. Una sesión ya abierta no se da por actualizada.
 
-AlanOS registra CF Consultores como frente técnico, pero no existe todavía un hogar de cliente suficientemente reconciliado. No inferir aceptación comercial, alcance ni estado productivo desde commits o previews.
+CF Consultores es una **ayuda puntual familiar**, no cliente NexOps, prospecto ni proyecto comercial. Alan hace la web para Carla. No inferir pricing, contrato, SLA, facturación ni continuidad comercial. El estado vigente es: web institucional casi terminada, dominio pendiente.
 
 ## Preflight
 
@@ -38,10 +37,10 @@ STOP y señal de BUDGET_RISK:
 - Leer sólo lo necesario para el resultado aprobado.
 - Hallazgos laterales no amplían el alcance automáticamente.
 - Un defecto que invalida aceptación o seguridad impide declarar éxito.
-- No cambiar producción, datos reales, credenciales, permisos, pricing, compromisos comerciales ni sistemas externos sin el gate correspondiente.
-- Separar implementado, mergeado, desplegado y validado por cliente.
-- No redefinir negocio desde el repositorio técnico.
+- No cambiar producción, datos reales, credenciales, permisos o sistemas externos sin el gate correspondiente.
+- No tratar este repo como evidencia de cliente activo o revenue NexOps.
+- No redefinir el negocio desde el repositorio técnico.
 
 ## Cierre
 
-Toda entrega no trivial deja evidencia durable y `EXECUTION RECEIPT`/checkpoint conforme al contrato vigente, incluyendo validaciones realmente ejecutadas, hallazgos diferidos, recuperación y STOP.
+Toda entrega no trivial deja evidencia durable y `EXECUTION RECEIPT`/checkpoint conforme al contrato vigente.
